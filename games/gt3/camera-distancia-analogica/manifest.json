@@ -1,0 +1,521 @@
+{
+  "schema": 2,
+  "release_version": "0.1",
+  "game_serial": "PBPX-95503",
+  "game_crc": "8AA991B0",
+  "group_name": "Camera/Distancia analogica - analogico direito",
+  "pnach_file": "8AA991B0_distancia-analogica.pnach",
+  "pnach_sha256": "160227a67f843210c8f95871388ccf9d805f282d265755be7abab0fa37d5ef3a",
+  "source_sha256": "47b20a71135a4d08482ef38a16434c188f7068d2d44e9af86cac987c2a202563",
+  "source_ee_sha256": "3cdb13c4cd038b42946fa6e536e8bc51f190e02024be373da03bf99e3cad5625",
+  "runtime": "PCSX2 PNACH extended only; no companion process",
+  "data_base": "00350AE0",
+  "data_size": 32,
+  "marker": "3242524F",
+  "marker_ascii": "ORB2",
+  "protocol_version": 2,
+  "defaults": {
+    "distance": 7.5,
+    "height": 1.75,
+    "pitch": 2.0,
+    "yaw": 0.0
+  },
+  "stored_defaults": [
+    -1.75,
+    -7.5,
+    362.0,
+    360.0
+  ],
+  "angle_encoding": {
+    "type": "float32_le",
+    "bias_degrees": 360.0,
+    "pitch_range": [
+      355.0,
+      430.0
+    ],
+    "yaw_range": [
+      360.0,
+      360.0
+    ],
+    "yaw_fixed_degrees": 0.0,
+    "quantum_degrees": 0.5,
+    "note": "Pitch uses physical degrees + 360; yaw is always stored as 360"
+  },
+  "controls": {
+    "pad1_packet": "002EA810",
+    "pad2_packet": "002EA900",
+    "right_x": "002EA814",
+    "right_y": "002EA815",
+    "buttons": "002EA902",
+    "connection_states": [
+      "002EA7FC",
+      "002EA8EC"
+    ],
+    "validation_flags": [
+      "00350AF8",
+      "00350AF9"
+    ],
+    "button_masks": {
+      "closer": "0400",
+      "farther": "0800"
+    },
+    "ps2_buttons": {
+      "closer": "Port 2 L1",
+      "farther": "Port 2 R1"
+    },
+    "deadzone_raw": [
+      104,
+      151
+    ],
+    "vertical_speed_tiers_degrees_per_frame": [
+      0.5,
+      1.0,
+      1.5
+    ],
+    "closer_key": "[",
+    "farther_key": "]",
+    "horizontal_mode": "relative_distance",
+    "hold_distance_on_release": true,
+    "horizontal_yaw_enabled": false,
+    "yaw_fixed_degrees": 0.0,
+    "analog_distance_steps_per_vsync": [
+      [
+        0,
+        31,
+        3
+      ],
+      [
+        32,
+        63,
+        2
+      ],
+      [
+        64,
+        103,
+        1
+      ],
+      [
+        104,
+        151,
+        0
+      ],
+      [
+        152,
+        191,
+        -1
+      ],
+      [
+        192,
+        223,
+        -2
+      ],
+      [
+        224,
+        255,
+        -3
+      ]
+    ],
+    "distance_step_sign": "positive means farther; negative means closer",
+    "keyboard_priority": "analog_x_when_active",
+    "simultaneous_keyboard_zoom": "cancel",
+    "keyboard_available_when_pad1_disconnected": true,
+    "analog_zoom_requires_pad2": false,
+    "analog_active_flag": "00350AFA",
+    "distance_step_encoding": "high16(negative_distance) +/- 1",
+    "distance_step_quanta": [
+      {
+        "distance_range": [
+          3,
+          4
+        ],
+        "units": 0.015625
+      },
+      {
+        "distance_range": [
+          4,
+          8
+        ],
+        "units": 0.03125
+      },
+      {
+        "distance_range": [
+          8,
+          15
+        ],
+        "units": 0.0625
+      }
+    ],
+    "distance_caps_after_zoom": true
+  },
+  "position_stub": "0028E760",
+  "pitch_stub": "00285824",
+  "yaw_stub": "00350AB8",
+  "gp": "003579F0",
+  "code_writes": [
+    {
+      "address": "0028E760",
+      "word": "8E210100"
+    },
+    {
+      "address": "0028E764",
+      "word": "10200003"
+    },
+    {
+      "address": "0028E768",
+      "word": "00000000"
+    },
+    {
+      "address": "0028E76C",
+      "word": "C78D90F0"
+    },
+    {
+      "address": "0028E770",
+      "word": "C78E90F4"
+    },
+    {
+      "address": "0028E774",
+      "word": "08095FAD"
+    },
+    {
+      "address": "0028E778",
+      "word": "00000000"
+    },
+    {
+      "address": "00285824",
+      "word": "8E210100"
+    },
+    {
+      "address": "00285828",
+      "word": "50200002"
+    },
+    {
+      "address": "0028582C",
+      "word": "44800000"
+    },
+    {
+      "address": "00285830",
+      "word": "C78090F8"
+    },
+    {
+      "address": "00285834",
+      "word": "08095FD8"
+    },
+    {
+      "address": "00285838",
+      "word": "46006300"
+    },
+    {
+      "address": "00350AB8",
+      "word": "8E210100"
+    },
+    {
+      "address": "00350ABC",
+      "word": "50200002"
+    },
+    {
+      "address": "00350AC0",
+      "word": "44800000"
+    },
+    {
+      "address": "00350AC4",
+      "word": "C78090FC"
+    },
+    {
+      "address": "00350AC8",
+      "word": "08095FE8"
+    },
+    {
+      "address": "00350ACC",
+      "word": "46006300"
+    },
+    {
+      "address": "0020014C",
+      "word": "0C0A39D8"
+    },
+    {
+      "address": "00200184",
+      "word": "0C0A39D8"
+    },
+    {
+      "address": "00200228",
+      "word": "0C0A1609"
+    },
+    {
+      "address": "00200234",
+      "word": "0C0D42AE"
+    },
+    {
+      "address": "0022FCBC",
+      "word": "26240040"
+    },
+    {
+      "address": "0022FCC0",
+      "word": "2603001A"
+    },
+    {
+      "address": "0022FCC4",
+      "word": "2405001D"
+    },
+    {
+      "address": "0022FCCC",
+      "word": "24080080"
+    },
+    {
+      "address": "0022FCD4",
+      "word": "AE280038"
+    },
+    {
+      "address": "0022FCF0",
+      "word": "AE28003C"
+    },
+    {
+      "address": "0022FD0C",
+      "word": "10C40018"
+    }
+  ],
+  "initialization_writes": [
+    {
+      "address": "00350AE0",
+      "word": "BFE00000"
+    },
+    {
+      "address": "00350AE4",
+      "word": "C0F00000"
+    },
+    {
+      "address": "00350AE8",
+      "word": "43B50000"
+    },
+    {
+      "address": "00350AEC",
+      "word": "43B40000"
+    },
+    {
+      "address": "00350AF8",
+      "word": "00000000"
+    },
+    {
+      "address": "00350AF4",
+      "word": "00000002"
+    },
+    {
+      "address": "00350AF0",
+      "word": "3242524F"
+    }
+  ],
+  "input_neutralization": [
+    {
+      "address": "0022FCBC",
+      "original_word": "26240038",
+      "word": "26240040"
+    },
+    {
+      "address": "0022FCC0",
+      "original_word": "26030018",
+      "word": "2603001A"
+    },
+    {
+      "address": "0022FCC4",
+      "original_word": "2405001F",
+      "word": "2405001D"
+    },
+    {
+      "address": "0022FCCC",
+      "original_word": "00C0382D",
+      "word": "24080080"
+    },
+    {
+      "address": "0022FCD4",
+      "original_word": "00000000",
+      "word": "AE280038"
+    },
+    {
+      "address": "0022FCF0",
+      "original_word": "00000000",
+      "word": "AE28003C"
+    },
+    {
+      "address": "0022FD0C",
+      "original_word": "10E40018",
+      "word": "10C40018"
+    }
+  ],
+  "input_poll_evidence": {
+    "poll_function": "0022F938",
+    "iteration_values": [
+      0,
+      4
+    ],
+    "port_expression": "iteration >> 2",
+    "raw_read_function": "00272140",
+    "slot": 0,
+    "unconditional_poll_of_ports": [
+      0,
+      1
+    ],
+    "raw_right_stick_preserved": true,
+    "game_right_stick_processed_value": 128,
+    "left_stick_buttons_pressure_bytes_preserved": true,
+    "wheel_and_usb_processing_preserved": true
+  },
+  "known_legacy_protocol_migrated": true,
+  "padding_evidence": [
+    {
+      "name": "position",
+      "start": "0028E760",
+      "size": 28,
+      "preceding_return": "0028E758",
+      "following_address": "0028E780",
+      "literal_pointer_references": [],
+      "direct_flow_references": [],
+      "gp_references": []
+    },
+    {
+      "name": "pitch",
+      "start": "00285824",
+      "size": 24,
+      "preceding_return": "0028581C",
+      "following_address": "00285840",
+      "literal_pointer_references": [],
+      "direct_flow_references": [],
+      "gp_references": []
+    },
+    {
+      "name": "constant_pool_alignment",
+      "start": "00350AB8",
+      "size": 72,
+      "preceding_return": null,
+      "following_address": "00350B00",
+      "literal_pointer_references": [],
+      "direct_flow_references": [],
+      "gp_references": [],
+      "neighbor_gp_operands": [
+        {
+          "instruction": "00100AC0",
+          "word": "8F82911C",
+          "target": "00350B0C"
+        },
+        {
+          "instruction": "00100AD4",
+          "word": "AF83911C",
+          "target": "00350B0C"
+        },
+        {
+          "instruction": "00100ADC",
+          "word": "AF82911C",
+          "target": "00350B0C"
+        },
+        {
+          "instruction": "00100AE8",
+          "word": "8F85911C",
+          "target": "00350B0C"
+        },
+        {
+          "instruction": "00100B0C",
+          "word": "8F82911C",
+          "target": "00350B0C"
+        },
+        {
+          "instruction": "00100B14",
+          "word": "8F90911C",
+          "target": "00350B0C"
+        },
+        {
+          "instruction": "002505F8",
+          "word": "C7819090",
+          "target": "00350A80"
+        },
+        {
+          "instruction": "00252648",
+          "word": "C7809094",
+          "target": "00350A84"
+        },
+        {
+          "instruction": "00252654",
+          "word": "C7809098",
+          "target": "00350A88"
+        },
+        {
+          "instruction": "00252660",
+          "word": "C780909C",
+          "target": "00350A8C"
+        },
+        {
+          "instruction": "00253F1C",
+          "word": "C78190A0",
+          "target": "00350A90"
+        },
+        {
+          "instruction": "00257460",
+          "word": "C78190A4",
+          "target": "00350A94"
+        },
+        {
+          "instruction": "00257668",
+          "word": "C78190A8",
+          "target": "00350A98"
+        },
+        {
+          "instruction": "002583AC",
+          "word": "C78490AC",
+          "target": "00350A9C"
+        },
+        {
+          "instruction": "002583B0",
+          "word": "C78690B0",
+          "target": "00350AA0"
+        },
+        {
+          "instruction": "002583B8",
+          "word": "C78190B4",
+          "target": "00350AA4"
+        },
+        {
+          "instruction": "00258F0C",
+          "word": "C78990B8",
+          "target": "00350AA8"
+        },
+        {
+          "instruction": "0025CB08",
+          "word": "C78190BC",
+          "target": "00350AAC"
+        },
+        {
+          "instruction": "0026A048",
+          "word": "C78190C0",
+          "target": "00350AB0"
+        },
+        {
+          "instruction": "0026A058",
+          "word": "C78190C4",
+          "target": "00350AB4"
+        }
+      ]
+    }
+  ],
+  "implementation": {
+    "distance_limits": [
+      3,
+      15
+    ],
+    "pitch_limits_degrees": [
+      -5,
+      70
+    ],
+    "distance_max_substeps": 3,
+    "distance_retained_on_release": true,
+    "height_retained": true,
+    "pitch_code_identical_to_orbital": true,
+    "yaw_fixed_stored": 360.0,
+    "analog_priority_valid_pad1_only": true,
+    "preserve_fov": true,
+    "preserve_bumper_camera": true,
+    "mips_code_identical_to_orbital_v0_4": true
+  },
+  "installed": false,
+  "pcsx2_execution_verified": false,
+  "variant": "camera-distancia-analogica",
+  "shared_utilities": "scripts/gerar-camera-orbital-nativa.py",
+  "orbital_release_unchanged": "mods/camera-orbital/v0.4-pnach",
+  "compatible_state_protocol": "ORB2/v2; distance, height and pitch retained; yaw fixed each VSYNC"
+}
