@@ -1,9 +1,9 @@
-gametitle=Gran Turismo 3 A-spec - Papao Spec orbital nativa v0.4 (PBPX-95503, 8AA991B0)
+gametitle=Gran Turismo 3 A-spec - Papao Spec orbital camera v0.4 (PBPX-95503, 8AA991B0)
 
 [Camera/Orbital nativa - analogico direito]
-description=PNACH puro. X define a posicao horizontal ate 180 graus por lado; X no centro retorna suavemente. Y ajusta inclinacao. [ aproxima, ] afasta. Retorno preserva inclinacao, altura e distancia. FOV original. Leia o LEIA-ME para binds do controle PS2. Nao combinar com outro mod de camera.
-// MIPS e floats nos alinhamentos conferidos; sem heap, trainer ou helper.
-// Inicializacao: assinatura do core e marcador vazio.
+description=Standalone PNACH. X selects the horizontal angle up to 180 degrees per side; release returns smoothly. Y adjusts pitch. [ moves closer; ] moves farther. Original FOV. See README for bindings. Use one camera mod.
+// Verified MIPS and float alignment; no heap allocation or helper.
+// Initialize only with matching core signatures and an empty marker.
 patch=1,EE,E01CFF80,extended,00200038
 patch=1,EE,E01B27BD,extended,0020003A
 patch=1,EE,E01A0004,extended,00200150
@@ -33,7 +33,7 @@ patch=1,EE,20350AEC,extended,43B40000
 patch=1,EE,20350AF8,extended,00000000
 patch=1,EE,20350AF4,extended,00000002
 patch=1,EE,20350AF0,extended,3242524F
-// Captura legada ORB1/v1: migra somente o protocolo conhecido para defaults nativos.
+// Migrate the known legacy ORB1/v1 state to native defaults.
 patch=1,EE,E01EFF80,extended,00200038
 patch=1,EE,E01D27BD,extended,0020003A
 patch=1,EE,E01C0004,extended,00200150
@@ -65,7 +65,7 @@ patch=1,EE,20350AEC,extended,43B40000
 patch=1,EE,20350AF8,extended,00000000
 patch=1,EE,20350AF4,extended,00000002
 patch=1,EE,20350AF0,extended,3242524F
-// Hooks: os floats de estado persistem entre aplicacoes.
+// Hooks: state floats persist between applications.
 patch=1,EE,E035FF80,extended,00200038
 patch=1,EE,E03427BD,extended,0020003A
 patch=1,EE,E0330004,extended,00200150
@@ -120,7 +120,7 @@ patch=1,EE,2022FCCC,extended,24080080
 patch=1,EE,2022FCD4,extended,AE280038
 patch=1,EE,2022FCF0,extended,AE28003C
 patch=1,EE,2022FD0C,extended,10C40018
-// Conexao e cabecalho analogico dos dois ports, renovados a cada VSYNC.
+// Refresh both ports' connection and analog headers every VSYNC.
 patch=1,EE,E02BFF80,extended,00200038
 patch=1,EE,E02A27BD,extended,0020003A
 patch=1,EE,E0290004,extended,00200150
@@ -165,7 +165,7 @@ patch=1,EE,E0030001,extended,002EA8EC
 patch=1,EE,E0020000,extended,002EA8EE
 patch=1,EE,E0017300,extended,002EA900
 patch=1,EE,00350AF9,extended,00000001
-// X define posicao horizontal absoluta, lote 1.
+// X selects an absolute horizontal position, batch 1.
 patch=1,EE,E0D8FF80,extended,00200038
 patch=1,EE,E0D727BD,extended,0020003A
 patch=1,EE,E0D60004,extended,00200150
@@ -383,7 +383,7 @@ patch=1,EE,E101005E,extended,002EA814
 patch=1,EE,20350AEC,extended,43AB4000
 patch=1,EE,E101005F,extended,002EA814
 patch=1,EE,20350AEC,extended,43AC4000
-// X define posicao horizontal absoluta, lote 2.
+// X selects an absolute horizontal position, batch 2.
 patch=1,EE,E0D8FF80,extended,00200038
 patch=1,EE,E0D727BD,extended,0020003A
 patch=1,EE,E0D60004,extended,00200150
@@ -601,7 +601,7 @@ patch=1,EE,E10100EE,extended,002EA814
 patch=1,EE,20350AEC,extended,43FF4000
 patch=1,EE,E10100EF,extended,002EA814
 patch=1,EE,20350AEC,extended,44002000
-// X define posicao horizontal absoluta, lote 3.
+// X selects an absolute horizontal position, batch 3.
 patch=1,EE,E038FF80,extended,00200038
 patch=1,EE,E03727BD,extended,0020003A
 patch=1,EE,E0360004,extended,00200150
@@ -659,7 +659,7 @@ patch=1,EE,E10100FE,extended,002EA814
 patch=1,EE,20350AEC,extended,4406A000
 patch=1,EE,E10100FF,extended,002EA814
 patch=1,EE,20350AEC,extended,44070000
-// Pitch com limites -5..70 graus.
+// Pitch limits: -5..70 degrees.
 patch=1,EE,E040FF80,extended,00200038
 patch=1,EE,E03F27BD,extended,0020003A
 patch=1,EE,E03E0004,extended,00200150
@@ -725,7 +725,7 @@ patch=1,EE,20350AE8,extended,43D70000
 patch=1,EE,E002C000,extended,00350AE8
 patch=1,EE,E00143D7,extended,00350AEA
 patch=1,EE,20350AE8,extended,43D70000
-// Distancia [ e ].
+// Distance keys: [ and ].
 patch=1,EE,E020FF80,extended,00200038
 patch=1,EE,E01F27BD,extended,0020003A
 patch=1,EE,E01E0004,extended,00200150
@@ -759,7 +759,7 @@ patch=1,EE,E0030800,extended,402EA902
 patch=1,EE,E0020400,extended,502EA902
 patch=1,EE,E001C170,extended,20350AE6
 patch=1,EE,30200001,extended,00350AE6
-// Retorno horizontal: classifica erro e direcao antes de mover.
+// Horizontal return: classify error and direction before moving.
 patch=1,EE,E02FFF80,extended,00200038
 patch=1,EE,E02E27BD,extended,0020003A
 patch=1,EE,E02D0004,extended,00200150
@@ -808,7 +808,7 @@ patch=1,EE,00350AFB,extended,00000006
 patch=1,EE,E00243CC,extended,00350AEE
 patch=1,EE,E0010000,extended,30350AEC
 patch=1,EE,00350AFB,extended,00000006
-// Retorno horizontal suave, subpasso 1 de seis.
+// Smooth horizontal return, substep 1 of six.
 patch=1,EE,E044FF80,extended,00200038
 patch=1,EE,E04327BD,extended,0020003A
 patch=1,EE,E0420004,extended,00200150
@@ -878,7 +878,7 @@ patch=1,EE,E0030000,extended,00350AEC
 patch=1,EE,E00243B4,extended,00350AEE
 patch=1,EE,00350AFA,extended,00000000
 patch=1,EE,00350AFB,extended,00000000
-// Retorno horizontal suave, subpasso 2 de seis.
+// Smooth horizontal return, substep 2 of six.
 patch=1,EE,E044FF80,extended,00200038
 patch=1,EE,E04327BD,extended,0020003A
 patch=1,EE,E0420004,extended,00200150
@@ -948,7 +948,7 @@ patch=1,EE,E0030000,extended,00350AEC
 patch=1,EE,E00243B4,extended,00350AEE
 patch=1,EE,00350AFA,extended,00000000
 patch=1,EE,00350AFB,extended,00000000
-// Retorno horizontal suave, subpasso 3 de seis.
+// Smooth horizontal return, substep 3 of six.
 patch=1,EE,E044FF80,extended,00200038
 patch=1,EE,E04327BD,extended,0020003A
 patch=1,EE,E0420004,extended,00200150
@@ -1018,7 +1018,7 @@ patch=1,EE,E0030000,extended,00350AEC
 patch=1,EE,E00243B4,extended,00350AEE
 patch=1,EE,00350AFA,extended,00000000
 patch=1,EE,00350AFB,extended,00000000
-// Retorno horizontal suave, subpasso 4 de seis.
+// Smooth horizontal return, substep 4 of six.
 patch=1,EE,E044FF80,extended,00200038
 patch=1,EE,E04327BD,extended,0020003A
 patch=1,EE,E0420004,extended,00200150
@@ -1088,7 +1088,7 @@ patch=1,EE,E0030000,extended,00350AEC
 patch=1,EE,E00243B4,extended,00350AEE
 patch=1,EE,00350AFA,extended,00000000
 patch=1,EE,00350AFB,extended,00000000
-// Retorno horizontal suave, subpasso 5 de seis.
+// Smooth horizontal return, substep 5 of six.
 patch=1,EE,E044FF80,extended,00200038
 patch=1,EE,E04327BD,extended,0020003A
 patch=1,EE,E0420004,extended,00200150
@@ -1158,7 +1158,7 @@ patch=1,EE,E0030000,extended,00350AEC
 patch=1,EE,E00243B4,extended,00350AEE
 patch=1,EE,00350AFA,extended,00000000
 patch=1,EE,00350AFB,extended,00000000
-// Retorno horizontal suave, subpasso 6 de seis.
+// Smooth horizontal return, substep 6 of six.
 patch=1,EE,E044FF80,extended,00200038
 patch=1,EE,E04327BD,extended,0020003A
 patch=1,EE,E0420004,extended,00200150

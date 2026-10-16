@@ -5,7 +5,7 @@
   "game_crc": "8AA991B0",
   "group_name": "Camera/Orbital nativa - analogico direito",
   "pnach_file": "8AA991B0_orbital-nativa.pnach",
-  "pnach_sha256": "b08cfd6117aca2fd670a8fb7b859f321b768ac0ad0bdfeee67aefb2f66dcc320",
+  "pnach_sha256": "649dce931e00e8492082b88e01cb9b8014d81ae8aaaa79dd579a962dbb9fd8c8",
   "source_sha256": "47b20a71135a4d08482ef38a16434c188f7068d2d44e9af86cac987c2a202563",
   "source_ee_sha256": "3cdb13c4cd038b42946fa6e536e8bc51f190e02024be373da03bf99e3cad5625",
   "runtime": "PCSX2 PNACH extended only; no companion process",
@@ -513,5 +513,7 @@
     "preserve_bumper_camera": true
   },
   "installed": false,
-  "pcsx2_execution_verified": false
+  "pcsx2_execution_verified": false,
+  "source_pnach_sha256": "b08cfd6117aca2fd670a8fb7b859f321b768ac0ad0bdfeee67aefb2f66dcc320",
+  "publication_change": "English descriptions and comments; group identifier and all patch commands preserved"
 }

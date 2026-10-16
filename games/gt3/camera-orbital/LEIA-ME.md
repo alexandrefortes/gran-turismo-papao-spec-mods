@@ -1,1 +1,1 @@
-Veja os [controles e a instalação](README.md).
+See [controls and installation](README.md).
