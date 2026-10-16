@@ -1,17 +1,15 @@
 # Gran Turismo Papão Spec Mods
 
-Mods PNACH para PCSX2. Cada pasta contém um mod e suas instruções.
+Standalone PNACH mods for PCSX2. No helper application.
 
-| Jogo | Mod | Analógico direito |
+| Game | Mod | Right stick horizontal |
 |---|---|---|
-| GT3 | [Câmera orbital](games/gt3/camera-orbital/) | Horizontal escolhe o ângulo; soltar retorna suavemente |
-| GT3 | [Distância da câmera](games/gt3/camera-distancia-analogica/) | Direita aproxima; esquerda afasta; soltar mantém |
-| GT4 | [Em desenvolvimento](games/gt4/) | Distância da câmera |
+| GT3 | [Orbital camera v0.4](games/gt3/camera-orbital/) | Proportional angle; release returns smoothly |
+| GT3 | [Distance camera v0.2](games/gt3/camera-distancia-analogica/) | Right moves closer; left moves farther; release holds |
+| GT4 Spec II 1.10 | [Distance camera v0.3](games/gt4/camera-distance/) | Right moves closer; left moves farther; release holds |
 
-Nos dois mods de GT3, o eixo vertical ajusta a inclinação. Alvo: **PBPX-95503 · CRC 8AA991B0**.
+The vertical axis adjusts pitch. Each folder lists the required serial and CRC.
 
-Copie o `.pnach` escolhido para a pasta de cheats do PCSX2, habilite seu grupo e reinicie o jogo. Use **um mod de câmera por vez**.
+Copy the chosen `.pnach` into the PCSX2 cheats folder, enable cheats and its group, then restart the game without loading a savestate. Use **one camera mod at a time**.
 
-Para relatar um problema, informe jogo, serial/CRC, versão do PCSX2 e mod usado.
-
-*PCSX2 camera mods. See each mod folder for controls and installation. GT3 target: PBPX-95503 / 8AA991B0. Enable one camera mod at a time.*
+For issues, include the mod version, game serial/CRC and PCSX2 version.

@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-15",
+  "version": "0.3",
+  "pnach_sha256": "fcfc5e565851240a35f6fd6c3cb2c2bbf510d3b27241bb51a382e06f0cdc5577",
+  "source": "Direct user report: esse deu certo",
+  "pcsx2_version": "2.8.2",
+  "user_reported_working": true,
+  "scope": "User confirmation following the requested startup test; individual controls were not itemized",
+  "observer": "user",
+  "game_serial": "SCUS-97436",
+  "game_crc": "646B2E29",
+  "spec_ii_version": "1.10"
+}

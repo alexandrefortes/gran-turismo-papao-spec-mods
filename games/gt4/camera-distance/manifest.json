@@ -1,0 +1,765 @@
+{
+  "schema": 2,
+  "game_serial": "SCUS-97436",
+  "game_crc": "646B2E29",
+  "release_version": "0.3",
+  "variant": "camera-distance",
+  "group_name": "Camera/Analog distance and pitch",
+  "pnach_file": "646B2E29_camera-distance.pnach",
+  "pnach_sha256": "fcfc5e565851240a35f6fd6c3cb2c2bbf510d3b27241bb51a382e06f0cdc5577",
+  "source_elf_sha256": "db08421bc26bdc0298e80cb02a8f2067ddf640f0575af5dfe0548f1fd73ac39d",
+  "source_initial_memory_sha256": "acf62c082e3b107ae291c42570497d8bc293b6b1839bb368380c659bc93fd81d",
+  "source_kind": "Reconstructed initial ELF memory; not a runtime savestate",
+  "runtime": "PCSX2 PNACH only",
+  "data_base": "005A9000",
+  "data_size": 64,
+  "marker": "33443447",
+  "marker_ascii": "G4D3",
+  "protocol_version": 3,
+  "allocation": {
+    "range": [
+      "005A9000",
+      "005A9400"
+    ],
+    "section": ".text",
+    "file_backed": true,
+    "evidence": "analise/relatorios/gt4-specii-110-plugin-compatibilidade.json",
+    "previous_low_memory_range_unused": [
+      "000F2000",
+      "000F2400"
+    ]
+  },
+  "installation": {
+    "wait_for_complete_port1_packet": true,
+    "payload_verified_before_hook_calls": true,
+    "replace_old_patch_and_cold_boot_required": true
+  },
+  "source_iso": {
+    "name": "Gran Turismo 4 (USA) (Beta).iso",
+    "spec_ii_version": "1.10",
+    "md5": "2c89bc11ccf68dc68f8af39c9e75096a",
+    "sha256": "6a3484b9672c10a92154ecee6faa5bbcfd4ed8cd538d8283e429c3fe6e1704b2"
+  },
+  "defaults": {
+    "distance": 7.5,
+    "height": 1.75,
+    "pitch": 2.0
+  },
+  "limits": {
+    "distance": [
+      3,
+      15
+    ],
+    "pitch": [
+      -5,
+      70
+    ]
+  },
+  "state_offsets": {
+    "negative_height": 0,
+    "negative_distance": 4,
+    "biased_pitch": 8,
+    "sin_pitch": 12,
+    "cos_pitch": 16,
+    "real_pitch": 20,
+    "marker": 24,
+    "protocol_version": 28,
+    "flags": 32,
+    "custom_enabled": 36,
+    "baseline_valid": 40,
+    "baseline_negative_height": 44,
+    "baseline_negative_distance": 48,
+    "distance_request": 52,
+    "pitch_request": 53
+  },
+  "controls": {
+    "ports": [
+      {
+        "connection": 9024452,
+        "length": 9024488,
+        "capabilities": 9024484,
+        "capability_count": 9024480,
+        "buttons": 9024492,
+        "rx": 9024494,
+        "ry": 9024495
+      },
+      {
+        "connection": 9024560,
+        "length": 9024596,
+        "capabilities": 9024592,
+        "capability_count": 9024588,
+        "buttons": 9024600,
+        "rx": 9024602,
+        "ry": 9024603
+      }
+    ],
+    "poll_running": 6820548,
+    "valid_connection_states": [
+      1,
+      2
+    ],
+    "valid_payload_length": [
+      6,
+      32
+    ],
+    "deadzone_raw": [
+      104,
+      151
+    ],
+    "diagonal_mode": "ignore_both_when_both_axes_outside_center",
+    "closer_mask": 1024,
+    "farther_mask": 2048,
+    "reset_mask": 4,
+    "reset_port": 2,
+    "reset": "original_per_car_camera_until_effective_adjustment",
+    "horizontal_mode": "relative_distance",
+    "vertical_mode": "relative_pitch",
+    "hold_on_release": true,
+    "manual_yaw": false,
+    "keyboard_priority": "valid_reset_then_effective_cardinal_x_then_port2_keys",
+    "analog_max_distance_substeps": 3,
+    "vertical_degrees_per_frame": [
+      0.5,
+      1.0,
+      1.5
+    ]
+  },
+  "geometry": {
+    "factory_mode": "Original source XYZ and original pitch argument pass through unchanged",
+    "rebase": "Factory hook captures original H/D into active state before custom adjustment is allowed",
+    "original_fov_preserved": true,
+    "original_ground_collision_preserved": true,
+    "factory_distance_clamped": false,
+    "custom_distance_clamped_on_distance_request_only": true
+  },
+  "code_writes": [
+    {
+      "address": "005A9100",
+      "word": "3C02005B"
+    },
+    {
+      "address": "005A9104",
+      "word": "C4800004"
+    },
+    {
+      "address": "005A9108",
+      "word": "C4810008"
+    },
+    {
+      "address": "005A910C",
+      "word": "E440902C"
+    },
+    {
+      "address": "005A9110",
+      "word": "E4419030"
+    },
+    {
+      "address": "005A9114",
+      "word": "24030001"
+    },
+    {
+      "address": "005A9118",
+      "word": "AC439028"
+    },
+    {
+      "address": "005A911C",
+      "word": "8C439024"
+    },
+    {
+      "address": "005A9120",
+      "word": "14600005"
+    },
+    {
+      "address": "005A9124",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9128",
+      "word": "E4409000"
+    },
+    {
+      "address": "005A912C",
+      "word": "E4419004"
+    },
+    {
+      "address": "005A9130",
+      "word": "08182C58"
+    },
+    {
+      "address": "005A9134",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9138",
+      "word": "27BDFFF0"
+    },
+    {
+      "address": "005A913C",
+      "word": "E7A20000"
+    },
+    {
+      "address": "005A9140",
+      "word": "E7A30004"
+    },
+    {
+      "address": "005A9144",
+      "word": "E7A40008"
+    },
+    {
+      "address": "005A9148",
+      "word": "E7A5000C"
+    },
+    {
+      "address": "005A914C",
+      "word": "3C02005B"
+    },
+    {
+      "address": "005A9150",
+      "word": "C4409000"
+    },
+    {
+      "address": "005A9154",
+      "word": "C4419004"
+    },
+    {
+      "address": "005A9158",
+      "word": "C442900C"
+    },
+    {
+      "address": "005A915C",
+      "word": "C4439010"
+    },
+    {
+      "address": "005A9160",
+      "word": "46030102"
+    },
+    {
+      "address": "005A9164",
+      "word": "46020942"
+    },
+    {
+      "address": "005A9168",
+      "word": "46052100"
+    },
+    {
+      "address": "005A916C",
+      "word": "46030942"
+    },
+    {
+      "address": "005A9170",
+      "word": "46020002"
+    },
+    {
+      "address": "005A9174",
+      "word": "46002941"
+    },
+    {
+      "address": "005A9178",
+      "word": "E4840004"
+    },
+    {
+      "address": "005A917C",
+      "word": "E4850008"
+    },
+    {
+      "address": "005A9180",
+      "word": "C7A20000"
+    },
+    {
+      "address": "005A9184",
+      "word": "C7A30004"
+    },
+    {
+      "address": "005A9188",
+      "word": "C7A40008"
+    },
+    {
+      "address": "005A918C",
+      "word": "C7A5000C"
+    },
+    {
+      "address": "005A9190",
+      "word": "27BD0010"
+    },
+    {
+      "address": "005A9194",
+      "word": "08182C58"
+    },
+    {
+      "address": "005A9198",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9200",
+      "word": "3C02005B"
+    },
+    {
+      "address": "005A9204",
+      "word": "8C429024"
+    },
+    {
+      "address": "005A9208",
+      "word": "10400003"
+    },
+    {
+      "address": "005A920C",
+      "word": "3C02005B"
+    },
+    {
+      "address": "005A9210",
+      "word": "C4409014"
+    },
+    {
+      "address": "005A9214",
+      "word": "46006300"
+    },
+    {
+      "address": "005A9218",
+      "word": "08169124"
+    },
+    {
+      "address": "005A921C",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9300",
+      "word": "25A2FFFC"
+    },
+    {
+      "address": "005A9304",
+      "word": "2C420002"
+    },
+    {
+      "address": "005A9308",
+      "word": "10400006"
+    },
+    {
+      "address": "005A930C",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9310",
+      "word": "2D020028"
+    },
+    {
+      "address": "005A9314",
+      "word": "10400003"
+    },
+    {
+      "address": "005A9318",
+      "word": "00000000"
+    },
+    {
+      "address": "005A931C",
+      "word": "10000002"
+    },
+    {
+      "address": "005A9320",
+      "word": "24020080"
+    },
+    {
+      "address": "005A9324",
+      "word": "90620060"
+    },
+    {
+      "address": "005A9328",
+      "word": "A4C20000"
+    },
+    {
+      "address": "005A932C",
+      "word": "03E00008"
+    },
+    {
+      "address": "005A9330",
+      "word": "00000000"
+    },
+    {
+      "address": "0023FE2C",
+      "word": "0C16A440"
+    },
+    {
+      "address": "0023FEF0",
+      "word": "0C16A480"
+    },
+    {
+      "address": "0051C770",
+      "word": "0C16A4C0"
+    },
+    {
+      "address": "0051C774",
+      "word": "00000000"
+    }
+  ],
+  "hook_originals": [
+    {
+      "address": "0023FE2C",
+      "word": "0C182C58"
+    },
+    {
+      "address": "0023FEF0",
+      "word": "0C169124"
+    },
+    {
+      "address": "0051C770",
+      "word": "90620060"
+    },
+    {
+      "address": "0051C774",
+      "word": "A4C20000"
+    }
+  ],
+  "signature_words": [
+    {
+      "address": "0023FC80",
+      "word": "27BDFF20"
+    },
+    {
+      "address": "0023FD7C",
+      "word": "C6000008"
+    },
+    {
+      "address": "0023FE30",
+      "word": "03A0202D"
+    },
+    {
+      "address": "0023FEF4",
+      "word": "4600AB06"
+    },
+    {
+      "address": "0023FFBC",
+      "word": "E659000C"
+    },
+    {
+      "address": "00240760",
+      "word": "03E00008"
+    },
+    {
+      "address": "00240764",
+      "word": "8C820184"
+    },
+    {
+      "address": "0060B160",
+      "word": "24030008"
+    },
+    {
+      "address": "0060B18C",
+      "word": "03E00008"
+    },
+    {
+      "address": "005A4490",
+      "word": "27BDFFF0"
+    },
+    {
+      "address": "0051C560",
+      "word": "27BDFEB0"
+    },
+    {
+      "address": "0051C57C",
+      "word": "FFBF0148"
+    },
+    {
+      "address": "0051C760",
+      "word": "000818C3"
+    },
+    {
+      "address": "0051C764",
+      "word": "25080008"
+    },
+    {
+      "address": "0051C768",
+      "word": "00651821"
+    },
+    {
+      "address": "0051C76C",
+      "word": "2484FFFF"
+    },
+    {
+      "address": "0051C778",
+      "word": "1480FFF9"
+    },
+    {
+      "address": "0051C77C",
+      "word": "24C60002"
+    },
+    {
+      "address": "0051BC88",
+      "word": "0C16EA82"
+    },
+    {
+      "address": "0051BC8C",
+      "word": "26050028"
+    },
+    {
+      "address": "00206488",
+      "word": "0C08C3C0"
+    }
+  ],
+  "initialization_writes": [
+    {
+      "address": "005A9000",
+      "word": "BFE00000"
+    },
+    {
+      "address": "005A9004",
+      "word": "C0F00000"
+    },
+    {
+      "address": "005A9008",
+      "word": "43B50000"
+    },
+    {
+      "address": "005A900C",
+      "word": "3D0EF2C6"
+    },
+    {
+      "address": "005A9010",
+      "word": "3F7FD814"
+    },
+    {
+      "address": "005A9014",
+      "word": "40000000"
+    },
+    {
+      "address": "005A9020",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9028",
+      "word": "00000000"
+    },
+    {
+      "address": "005A902C",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9030",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9034",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9038",
+      "word": "00000000"
+    },
+    {
+      "address": "005A903C",
+      "word": "00000000"
+    },
+    {
+      "address": "005A9024",
+      "word": "00000001"
+    },
+    {
+      "address": "005A901C",
+      "word": "00000003"
+    },
+    {
+      "address": "005A9018",
+      "word": "33443447"
+    }
+  ],
+  "empty_cave_halfwords": [
+    "005A9000",
+    "005A9002",
+    "005A9004",
+    "005A9006",
+    "005A9008",
+    "005A900A",
+    "005A900C",
+    "005A900E",
+    "005A9010",
+    "005A9012",
+    "005A9014",
+    "005A9016",
+    "005A9018",
+    "005A901A",
+    "005A901C",
+    "005A901E",
+    "005A9020",
+    "005A9022",
+    "005A9024",
+    "005A9026",
+    "005A9028",
+    "005A902A",
+    "005A902C",
+    "005A902E",
+    "005A9030",
+    "005A9032",
+    "005A9034",
+    "005A9036",
+    "005A9038",
+    "005A903A",
+    "005A903C",
+    "005A903E",
+    "005A9100",
+    "005A9102",
+    "005A9104",
+    "005A9106",
+    "005A9108",
+    "005A910A",
+    "005A910C",
+    "005A910E",
+    "005A9110",
+    "005A9112",
+    "005A9114",
+    "005A9116",
+    "005A9118",
+    "005A911A",
+    "005A911C",
+    "005A911E",
+    "005A9120",
+    "005A9122",
+    "005A9124",
+    "005A9126",
+    "005A9128",
+    "005A912A",
+    "005A912C",
+    "005A912E",
+    "005A9130",
+    "005A9132",
+    "005A9134",
+    "005A9136",
+    "005A9138",
+    "005A913A",
+    "005A913C",
+    "005A913E",
+    "005A9140",
+    "005A9142",
+    "005A9144",
+    "005A9146",
+    "005A9148",
+    "005A914A",
+    "005A914C",
+    "005A914E",
+    "005A9150",
+    "005A9152",
+    "005A9154",
+    "005A9156",
+    "005A9158",
+    "005A915A",
+    "005A915C",
+    "005A915E",
+    "005A9160",
+    "005A9162",
+    "005A9164",
+    "005A9166",
+    "005A9168",
+    "005A916A",
+    "005A916C",
+    "005A916E",
+    "005A9170",
+    "005A9172",
+    "005A9174",
+    "005A9176",
+    "005A9178",
+    "005A917A",
+    "005A917C",
+    "005A917E",
+    "005A9180",
+    "005A9182",
+    "005A9184",
+    "005A9186",
+    "005A9188",
+    "005A918A",
+    "005A918C",
+    "005A918E",
+    "005A9190",
+    "005A9192",
+    "005A9194",
+    "005A9196",
+    "005A9198",
+    "005A919A",
+    "005A9200",
+    "005A9202",
+    "005A9204",
+    "005A9206",
+    "005A9208",
+    "005A920A",
+    "005A920C",
+    "005A920E",
+    "005A9210",
+    "005A9212",
+    "005A9214",
+    "005A9216",
+    "005A9218",
+    "005A921A",
+    "005A921C",
+    "005A921E",
+    "005A9300",
+    "005A9302",
+    "005A9304",
+    "005A9306",
+    "005A9308",
+    "005A930A",
+    "005A930C",
+    "005A930E",
+    "005A9310",
+    "005A9312",
+    "005A9314",
+    "005A9316",
+    "005A9318",
+    "005A931A",
+    "005A931C",
+    "005A931E",
+    "005A9320",
+    "005A9322",
+    "005A9324",
+    "005A9326",
+    "005A9328",
+    "005A932A",
+    "005A932C",
+    "005A932E",
+    "005A9330",
+    "005A9332"
+  ],
+  "preserve_ranges": [
+    [
+      2358832,
+      4
+    ],
+    [
+      2359028,
+      4
+    ],
+    [
+      2356944,
+      1452
+    ],
+    [
+      2359304,
+      1376
+    ],
+    [
+      2360680,
+      348
+    ],
+    [
+      2353120,
+      100
+    ],
+    [
+      2359192,
+      40
+    ],
+    [
+      2361184,
+      8
+    ],
+    [
+      6336864,
+      52
+    ],
+    [
+      5915792,
+      40
+    ],
+    [
+      7034664,
+      392
+    ]
+  ],
+  "game_execution_verified": false,
+  "installed": false
+}
